@@ -2,15 +2,15 @@ import { v4 as uuid } from "uuid";
 import type { Player, Card, Round, Suit, Rank } from "../types/game";
 
 export class PockerGame {
-  private id: string;
-  private players: Player[] = [];
-  private deck: Card[] = [];
-  private communityCards: Card[] = [];
-  private pot: number = 0;
-  private dealerIndex: number = 0;
-  private round: Round = "preflop";
-  private currentBet: number = 0;
-  private currentPlayerIndex: number = 0;
+  public id: string;
+  public players: Player[] = [];
+  public deck: Card[] = [];
+  public communityCards: Card[] = [];
+  public pot: number = 0;
+  public dealerIndex: number = 0;
+  public round: Round = "preflop";
+  public currentBet: number = 0;
+  public currentPlayerIndex: number = 0;
 
   constructor(public smallBlind: number = 10, public bigBlind: number = 25) {
     this.id = uuid();

@@ -13,3 +13,14 @@ export type Player = {
   isAllin: boolean;
   currentBet: number; 
 }
+
+export type ClientMessage = 
+  | {type: 'CREATE_GAME'; playerName: string}
+  | {type: 'JOIN_GAME'; gameId: string; playerName: string}
+  | {type: 'BET'; gameId: string; playerName: string; amount: number}
+  | {type: 'FOLD'; gameId: string; playerName: string};
+
+export type ServerMessage =
+  | {type: 'GAME_CREATED'; gameId: string}
+  | {type: 'GAME_STATE'; state: any}
+  | {type: 'ERROR'; message: string};
